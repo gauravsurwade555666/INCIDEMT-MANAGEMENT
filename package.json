@@ -12,11 +12,13 @@
     "@sap-cloud-sdk/util": "^3.25.0",
     "@sap/cds": "^8",
     "@sap/xssec": "^4",
-    "express": "^4"
+    "express": "^4",
+    "@cap-js/hana": "^1"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.7.0",
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8",
     "axios": "^1.7.9",
     "chai": "^4.5.0",
     "chai-as-promised": "^7.1.2",
@@ -45,7 +47,8 @@
             },
             "alice": {
               "roles": [
-                "admin"
+                "admin",
+                "support"
               ]
             },
             "bob": {
@@ -60,7 +63,15 @@
       "API_BUSINESS_PARTNER": {
         "kind": "odata-v2",
         "model": "srv/external/API_BUSINESS_PARTNER"
-      }
+      },
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "html5-repo": true
+    },
+    "sql": {
+      "native_hana_associations": false
     }
   }
 }
