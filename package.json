@@ -6,6 +6,10 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3.25.0",
+    "@sap-cloud-sdk/http-client": "^3.25.0",
+    "@sap-cloud-sdk/resilience": "^3.25.0",
+    "@sap-cloud-sdk/util": "^3.25.0",
     "@sap/cds": "^8",
     "@sap/xssec": "^4",
     "express": "^4"
@@ -52,7 +56,11 @@
           }
         }
       },
-      "auth": "xsuaa"
+      "auth": "xsuaa",
+      "API_BUSINESS_PARTNER": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER"
+      }
     }
   }
 }
